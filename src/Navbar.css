@@ -1,6 +1,7 @@
 
 
 
+
 .nav {
     position: absolute;
     top: 0;
@@ -124,4 +125,23 @@
       border-radius: 0;
     }
   }
-  
+
+
+  .onScroll {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* background-color: #000 !important;   */
+    position: fixed;
+    /* animation: blurr 1s ease-in ;
+    animation-iteration-count: 1; */
+    backdrop-filter: blur(10px);
+    
+}
+  @keyframes blurr {
+    0%{
+        backdrop-filter: blur(0px);
+    }
+    100%{
+        backdrop-filter: blur(10px);
+    }
+  }
