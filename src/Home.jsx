@@ -36,6 +36,13 @@ const Home = () => {
       for (let i = 0; i < middleLines.length; i++) {
         middleLines[i].style.height = "100%";
       }
+
+      const worldSec = document.querySelector(".contentContainer");
+      worldSec.style.opacity = "1";
+      worldSec.style.transform = "translateX(0px)";
+      const tradeSec = document.querySelector(".textVideo");
+      tradeSec.style.opacity = "1";
+      tradeSec.style.transform = "translateX(0px)";
     }
   }, [isInView]);
 
