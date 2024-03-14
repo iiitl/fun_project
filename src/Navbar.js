@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-
+import './Navbar.css'
 const Navbar = () => {
   const navRef = useRef(null);
 
