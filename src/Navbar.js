@@ -1,11 +1,34 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from 'react-scroll';
+import { useState } from "react";
 
 const Navbar = () => {
   const navRef = useRef(null);
+  
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Function to handle scroll event
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  // Add event listener when component mounts
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <nav ref={navRef} className="nav">
+    {/* <div className="hi"> */}
+    <nav ref={navRef} className={`navbar ${isScrolled ? 'blur' : 'nav'}`}>
         <a href="#" className="logo">
           CryptoArtVerse
         </a>
@@ -21,6 +44,8 @@ const Navbar = () => {
           <a href="#">Sign up</a>
         </div>
       </nav>
+    {/* </div> */}
+      
     </>
   );
 };

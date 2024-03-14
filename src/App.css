@@ -7,8 +7,6 @@
 
 body {
   min-height: 100vh;
-  /* background-image: linear-gradient(black, white); */
-  /* #21222A */
   overflow: auto;
   background-color: black;
 }
@@ -25,7 +23,28 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  position: fixed;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
+
+.blur {
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  padding-right: 50px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+}
+
+
+
 
 .logo {
   color: #fff;
