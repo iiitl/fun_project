@@ -12,7 +12,7 @@ body {
   overflow: auto;
   background-color: black;
 }
-/* 
+
 .nav {
   position: absolute;
   top: 0;
@@ -25,7 +25,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-} */
+}
 
 .logo {
   color: #fff;
@@ -86,13 +86,13 @@ nav a:hover {
   width: 100vw;
 }
 
-/* .nav_blur {
+.nav_blur {
   backdrop-filter: blur(10px);
-} */
+}
 
-/* .navbar {
+.navbar {
   margin-right: 20px;
-} */
+}
 
 .crypto {
   width: 400px;
