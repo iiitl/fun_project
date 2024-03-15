@@ -39,7 +39,7 @@ const Home = () => {
     <div>
       <Navbar />
       <video autoPlay muted loop className="bgVideo">
-        <source src={bgVideo} type="video/mp4" />
+        <source src={bgVideo} type="video/mp4" className="vid" autoplay muted loop />
         Your browser does not support the video tag.
       </video>
 
