@@ -35,15 +35,17 @@ const Home = () => {
     }
   }, [isInView]);
 
+  
+
   return (
     <div>
       <Navbar />
-      <video autoPlay muted loop className="bgVideo">
+      <video autoPlay muted  className="bgVideo" loop onEnded={(e) => e.target.play()}>
         <source src={bgVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <div className="content" ref={contentContainerRef}>
+      <div className="content">
         <h1 className="welcome">Welcome To The Digital Crypto Art</h1>
         <p className="text_content">
           Lorem ipsum dolor sit amet, an his etiam torquatos
