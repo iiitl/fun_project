@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-
+import './custom.css'
 const Navbar = () => {
   const navRef = useRef(null);
 
@@ -10,7 +10,7 @@ const Navbar = () => {
           CryptoArtVerse
         </a>
         <div className="navbar" style={{ marginLeft: "-160px" }}>
-          <a href="#">Home</a>
+          <a href="#" className="home">Home</a>
           <a href="#lineContainer">About</a>
           {/* <a href="#">Portfolio</a>
           <a href="#">Service</a>
