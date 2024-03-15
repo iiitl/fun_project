@@ -16,8 +16,10 @@ const Home = () => {
   const vdScrollRotateRef = useRef(null);
   const contentContainerRef = useRef(null);
   const ref = useRef(null);
+  const midRef = useRef(null);
 
   const isInView = useInView(ref, { once: false });
+  const isMidInView = useInView(midRef, { once: false });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,6 +47,16 @@ const Home = () => {
       tradeSec.style.transform = "translateX(0px)";
     }
   }, [isInView]);
+  useEffect(() => {
+    if (isMidInView) {
+      const worldSec = document.querySelector(".contentContainer");
+      worldSec.style.opacity = "1";
+      worldSec.style.transform = "translateX(0px)";
+      const tradeSec = document.querySelector(".textVideo");
+      tradeSec.style.opacity = "1";
+      tradeSec.style.transform = "translateX(0px)";
+    }
+  }, [isMidInView]);
 
   return (
     <div>
@@ -68,46 +80,49 @@ const Home = () => {
           EXPLORE NOW
         </button>
       </div>
-      <div className="color">
-        <div className="videoContainer">
-          <div className="textVideo" ref={textVideoRef}>
-            <h2 className="trade">TRADE</h2>
-            <h2 className="tradeAsset">
-              The virtual destination for digital assets
-            </h2>
-            <p>
-              Buy and sell LAND, Estates, Avatar wearables and names in the
-              Decentraland Marketplace: stocking the very best digital goods and
-              paraphernalia backed by the Ethereum blockchain.
-            </p>
-            <button className="browse">START BROWSING</button>
+      <motion.div ref={midRef} transition={{ duration: 1 }}>
+        <div className="color">
+          <div className="videoContainer">
+            <div className="textVideo" ref={textVideoRef}>
+              <h2 className="trade">TRADE</h2>
+              <h2 className="tradeAsset">
+                The virtual destination for digital assets
+              </h2>
+              <p>
+                Buy and sell LAND, Estates, Avatar wearables and names in the
+                Decentraland Marketplace: stocking the very best digital goods and
+                paraphernalia backed by the Ethereum blockchain.
+              </p>
+              <button className="browse">START BROWSING</button>
+            </div>
+            <img src={crypto} className="crypto" />
           </div>
-          <img src={crypto} className="crypto" />
-        </div>
-        <div className="scrollRotate">
-          <div className="vdRotate">
-            <div className="vdContainer" ref={vdScrollRotateRef}>
-              <video
-                autoPlay
-                muted
-                loop
-                id="myVideo"
-                className="vdScrollRotate"
-                src={metaverse}
-              ></video>
+          <div className="scrollRotate">
+            <div className="vdRotate">
+              <div className="vdContainer" ref={vdScrollRotateRef}>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  id="myVideo"
+                  className="vdScrollRotate"
+                  src={metaverse}
+                ></video>
+              </div>
+            </div>
+            <div className="contentContainer" ref={contentContainerRef}>
+              <h1 className="titleRotate">WORLD</h1>
+              <p className="linePara">
+                The XR Portal To The Open Metaverse Enabling You To Play, Learn,
+                Socialize, Work And Travel To Different Worlds, Making VIVERSE
+                Even More Immersive From The Second You Put On Your Headset.
+              </p>
+              <button className="lineBtn">Explore Now</button>
             </div>
           </div>
-          <div className="contentContainer" ref={contentContainerRef}>
-            <h1 className="titleRotate">WORLD</h1>
-            <p className="linePara">
-              The XR Portal To The Open Metaverse Enabling You To Play, Learn,
-              Socialize, Work And Travel To Different Worlds, Making VIVERSE
-              Even More Immersive From The Second You Put On Your Headset.
-            </p>
-            <button className="lineBtn">Explore Now</button>
-          </div>
         </div>
-      </div>
+      </motion.div>
+
       <motion.div ref={ref} transition={{ duration: 1 }}>
         <div className="lineContainer" id="lineContainer">
           <div className="lineAppear " ref={lineAppearRef}></div>
