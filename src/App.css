@@ -14,18 +14,25 @@ body {
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px 100px;
   padding-right: 50px;
-  background: transparent;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  height: 70px;
+  
 }
+.nav-bg{
+  background-color: #2e2f30;
+  opacity: 0.6;
+}
+
 
 .logo {
   color: #fff;
@@ -41,11 +48,20 @@ nav a {
   text-decoration: none;
   margin-left: 35px;
   transition: 0.3s;
-}
+  
 
-nav a:hover {
-  color: red;
 }
+nav .animation{
+  position: absolute;
+  height: 100%;
+  top:0;
+  z-index: 0;
+  background: #03446a;
+  width: 100px;
+  border-radius: 50%;
+}
+ 
+
 
 .content {
   position: absolute;
