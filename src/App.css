@@ -44,7 +44,7 @@ nav a {
 }
 
 nav a:hover {
-  color: red;
+  color: rgb(135, 38, 19);
 }
 
 .content {
@@ -62,24 +62,45 @@ nav a:hover {
 }
 
 #myBtn {
+  --glow-color: rgb(226, 18, 18);
+  
+  
   font-size: 18px;
   padding: 15px 43px;
-  border: none;
+  border: 0.25em solid var(--glow-color);
   border-radius: 10px;
-  background: purple;
-  color: #fff;
+  background: var(--btn-color);
+  color: var(--glow-color);
   cursor: pointer;
   margin-top: 10px;
-  transition-duration: 400ms;
+  transition : all 0.3s;
   margin-left: 128px;
-  font-size: 18px;
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0  4em 1em var(--glow-spread-color),
+  inset 0 0 0.75em 0.25em var(--glow-color);
+  
+  position:relative;
 }
 
 #myBtn:hover {
-  background: rgb(255, 0, 255);
-  color: white;
-  translate: 0px -8px;
+  background: var(--clr);
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0  4em 1em var(--glow-spread-color),
+  inset 0 0 0.75em 0.25em var(--glow-color);
+  translate: 0px -10px;
+
+
+  
 }
+
+#myBtn:before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  
+
+}
+
 
 .bgVideo {
   height: 100vh;
@@ -121,7 +142,7 @@ nav a:hover {
 }
 
 .trade {
-  color: red;
+  color: rgb(14, 183, 175);
   font-size: 55px;
   margin-bottom: 30px;
 }
@@ -135,18 +156,35 @@ nav a:hover {
 .browse {
   margin-top: 20px;
   padding: 11px 53px;
-  border-radius: 10px;
-  font-size: 18px;
-  border: none;
-  background-color: red;
-  color: white;
+  
   font-weight: bold;
+  
+  --glow-color: rgb(56, 95, 133);
+  
+  
+  font-size: 18px;
+  padding: 15px 43px;
+  border: 0.25em solid var(--glow-color);
+  border-radius: 10px;
+  background: var(--btn-color);
+  color: var(--glow-color);
   cursor: pointer;
-  transition: 600ms;
+  margin-top: 10px;
+  transition : all 0.3s;
+  margin-left: 128px;
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0  4em 1em var(--glow-spread-color),
+  inset 0 0 0.75em 0.25em var(--glow-color);
+  
+  position:relative;
 }
 .browse:hover {
-  background-color: rgb(242, 67, 67);
+  
   translate: 0px -10px;
+  background: var(--clr);
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0  4em 1em var(--glow-spread-color),
+  inset 0 0 0.75em 0.25em var(--glow-color);
 }
 
 p {
@@ -245,16 +283,33 @@ p.linePara {
 button.lineBtn {
   margin-top: 20px;
   padding: 10px 50px;
+  font-weight: bold;
+  
+  --glow-color: rgb(93, 196, 112);
+  
+  
+  font-size: 18px;
+  padding: 15px 43px;
+  border: 0.25em solid var(--glow-color);
   border-radius: 10px;
-  border: none;
-  color: white;
-  background-color: red;
+  background: var(--btn-color);
+  color: var(--glow-color);
   cursor: pointer;
-  transition: 400ms;
+  margin-top: 10px;
+  transition : all 0.3s;
+  margin-left: 128px;
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0  4em 1em var(--glow-spread-color),
+  inset 0 0 0.75em 0.25em var(--glow-color);
+  
+  position:relative;
 }
 button.lineBtn:hover {
-  background: rgb(0, 128, 255);
-  color: white;
+  background: var(--clr);
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0  4em 1em var(--glow-spread-color),
+  inset 0 0 0.75em 0.25em var(--glow-color);
+  
   translate: 0px -8px;
 }
 .vdContainer {
