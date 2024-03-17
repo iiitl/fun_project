@@ -1,7 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef,useState } from "react";
 
 const Navbar = () => {
   const navRef = useRef(null);
+
+  const [color, setColor] = useState(false)
+  const changeColor = () => {
+    if (window.scrollY >=75){
+      setColor(true)
+    }else{
+      setColor(false)
+    }
+  }
+  window.addEventListener('scroll',changeColor)
 
   return (
     <>

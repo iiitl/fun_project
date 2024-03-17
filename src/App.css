@@ -14,17 +14,20 @@ body {
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px 100px;
   padding-right: 50px;
-  background: transparent;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  background-color: rgb(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  height : 75px;
 }
 
 .logo {
