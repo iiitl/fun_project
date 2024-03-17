@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navRef = useRef(null);
@@ -17,8 +18,8 @@ const Navbar = () => {
           <a href="#">Contact</a> */}
         </div>
         <div className="join">
-          <a href="#">Login</a>
-          <a href="#">Sign up</a>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Sign up</Link>
         </div>
       </nav>
     </>

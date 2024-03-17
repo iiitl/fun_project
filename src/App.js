@@ -1,16 +1,21 @@
 import React from 'react'
-import { Route,Routes } from 'react-router-dom'
+import  ReactDOM  from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Home'
+import Register from './pages/Resgister'
 
 const App = () => {
-  return (
-    <>
-    
-    <Routes>
-      <Route path='/' element={<Home />} />
-    </Routes>
-    </>
-  )
+
+  const router = createBrowserRouter([
+    { path: '/register', element: <Register /> },
+    { path: '/', element: <Home /> },
+  ])
+
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+);
 }
 
 export default App

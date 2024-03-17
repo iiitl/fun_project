@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv")
 const heathcheck = require("./routes/heathcheck.routes")
+const userRoute = require("./routes/user.routes")
 
 dotenv.config()
 
@@ -40,3 +41,4 @@ app.use(cookieParser());
 
 app.use(express.json());
 app.use("/heathcheck", heathcheck)
+app.use("/api", userRoute)
