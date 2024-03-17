@@ -29,8 +29,14 @@ const Home = () => {
   useEffect(() => {
     if (isInView) {
       const lineAppearBottom = lineAppearBottomRef.current;
+      // const lineAppearMiddle=lineAppearMiddleRefs[0].current;
+      // lineAppearMiddle.style.width="100%";
       let lineAppear = document.querySelector(".lineAppear");
-      lineAppear.style.width = "100%";
+      
+       lineAppear.style.width = "100%";
+       let lineAppearMiddles =document.querySelectorAll(".lineAppearMiddle");
+     lineAppearMiddles[0].style.height="87%";
+     lineAppearMiddles[1].style.height="87%";
       lineAppearBottom.style.width = "100%";
     }
   }, [isInView]);
