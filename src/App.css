@@ -82,8 +82,8 @@ nav a:hover {
 }
 
 .bgVideo {
-  /* height: 100vh; */
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .nav_blur {
@@ -112,13 +112,13 @@ nav a:hover {
   font-size: 25px;
 }
 .color {
-  background-image: linear-gradient(black, #21222a);
+  background-image: linear-gradient(rgb(26, 23, 23), #2d2d2d);
 }
-/* .videoContainer {
+.videoContainer {
   padding: 100px;
   /* background-image: linear-gradient(black, #21222A); */
   /* background-color: #000000;*/
-
+}
 
 .trade {
   color: red;
@@ -167,14 +167,14 @@ p {
 
 .videoContainer {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .lineContainer {
   width: 100%;
   height: 433px;
   padding: 64px;
-  background-color: #0d0e10;
+  background-image: linear-gradient(black, #21222a);
   /* border: 2px solid white;
   border-bottom: none;
   border-left: none;
@@ -258,15 +258,15 @@ button.lineBtn:hover {
   translate: 0px -8px;
 }
 .vdContainer {
-  /* height: 410x; */
-  width: 100%;
-  /* margin-left: 80px; */
-  /* margin-top: 50px; */
+  height: 410x;
+  width: 707px;
+  margin-left: 80px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 .vdScrollRotate {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   border-radius: 30px;
   /* transition: 2s; */
 }
@@ -338,14 +338,25 @@ body {
 }
 
 .card {
-  background-color: white;
-  color: black;
+  background-color: rgb(156, 155, 155);
+  color: rgb(20, 20, 20);
   font-family: cursive;
   padding: 8px;
   font-size: large;
   text-align: center;
   width: 300px;
   height: 300px;
+  border-radius: 5%;
+  border-bottom: 4px solid rgb(88, 88, 88);
+  border-right: 4px solid rgb(88, 88, 88);
+  transition: transform 0.3s ease;
+}
+
+.card:hover{
+  transform: rotate(-5deg);
+  height: 310px;
+  width: 310px;
+  font-size: larger;
 }
 
 .flip-card-back {
