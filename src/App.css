@@ -44,7 +44,18 @@ nav a {
 }
 
 nav a:hover {
-  color: red;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  translate: 0px -8px;
+  font-size: 30px;
+  transition: font-size 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); 
+  background-color: rgb(192, 115, 20);
+  transition: box-shadow 0.3s ease;
+
+ 
+  
 }
 
 .content {
