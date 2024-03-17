@@ -40,11 +40,15 @@ nav a {
   font-size: 18px;
   text-decoration: none;
   margin-left: 35px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 nav a:hover {
-  color: red;
+  color:blue;
+  background-image:linear-gradient(aqua,aqua);
+  border-right: solid 4px blue;
+  border-bottom: solid 4px blue;
+  border-radius: 5px;
 }
 
 .content {
