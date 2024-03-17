@@ -32,6 +32,10 @@ const Home = () => {
       let lineAppear = document.querySelector(".lineAppear");
       lineAppear.style.width = "100%";
       lineAppearBottom.style.width = "100%";
+      const middleLines = document.querySelectorAll(".lineAppearMiddle");
+      for (let i = 0; i < middleLines.length; i++) {
+        middleLines[i].style.height = "100%";
+      }
     }
   }, [isInView]);
 
