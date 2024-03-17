@@ -16,10 +16,12 @@ const Home = () => {
   const vdScrollRotateRef = useRef(null);
   const contentContainerRef = useRef(null);
   const ref = useRef(null);
-  const midRef = useRef(null);
+  const midRefTrade = useRef(null);
+  const midRefWorld = useRef(null);
 
   const isInView = useInView(ref, { once: false });
-  const isMidInView = useInView(midRef, { once: false });
+  const isTradeInView = useInView(midRefTrade, { once: false });
+  const isWorldInView = useInView(midRefWorld, { once: false });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,25 +40,22 @@ const Home = () => {
       for (let i = 0; i < middleLines.length; i++) {
         middleLines[i].style.height = "100%";
       }
-
-      const worldSec = document.querySelector(".contentContainer");
-      worldSec.style.opacity = "1";
-      worldSec.style.transform = "translateX(0px)";
-      const tradeSec = document.querySelector(".textVideo");
-      tradeSec.style.opacity = "1";
-      tradeSec.style.transform = "translateX(0px)";
     }
   }, [isInView]);
   useEffect(() => {
-    if (isMidInView) {
-      const worldSec = document.querySelector(".contentContainer");
-      worldSec.style.opacity = "1";
-      worldSec.style.transform = "translateX(0px)";
+    if (isTradeInView) {
       const tradeSec = document.querySelector(".textVideo");
       tradeSec.style.opacity = "1";
       tradeSec.style.transform = "translateX(0px)";
     }
-  }, [isMidInView]);
+  }, [isTradeInView]);
+  useEffect(() => {
+    if (isWorldInView) {
+      const worldSec = document.querySelector(".contentContainer");
+      worldSec.style.opacity = "1";
+      worldSec.style.transform = "translateX(0px)";
+    }
+  }, [isWorldInView]);
 
   return (
     <div>
@@ -80,9 +79,9 @@ const Home = () => {
           EXPLORE NOW
         </button>
       </div>
-      <motion.div ref={midRef} transition={{ duration: 1 }}>
-        <div className="color">
-          <div className="videoContainer">
+      <div className="color">
+        <div className="videoContainer">
+          <motion.div ref={midRefTrade} transition={{ duration: 1 }}>
             <div className="textVideo" ref={textVideoRef}>
               <h2 className="trade">TRADE</h2>
               <h2 className="tradeAsset">
@@ -95,21 +94,25 @@ const Home = () => {
               </p>
               <button className="browse">START BROWSING</button>
             </div>
-            <img src={crypto} className="crypto" />
-          </div>
-          <div className="scrollRotate">
-            <div className="vdRotate">
-              <div className="vdContainer" ref={vdScrollRotateRef}>
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  id="myVideo"
-                  className="vdScrollRotate"
-                  src={metaverse}
-                ></video>
-              </div>
+          </motion.div>
+
+          <img src={crypto} className="crypto" />
+        </div>
+        <div className="scrollRotate">
+          <div className="vdRotate">
+            <div className="vdContainer" ref={vdScrollRotateRef}>
+              <video
+                autoPlay
+                muted
+                loop
+                id="myVideo"
+                className="vdScrollRotate"
+                src={metaverse}
+              ></video>
             </div>
+          </div>
+          <motion.div ref={midRefWorld} transition={{ duration: 1 }}>
+
             <div className="contentContainer" ref={contentContainerRef}>
               <h1 className="titleRotate">WORLD</h1>
               <p className="linePara">
@@ -119,9 +122,9 @@ const Home = () => {
               </p>
               <button className="lineBtn">Explore Now</button>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       <motion.div ref={ref} transition={{ duration: 1 }}>
         <div className="lineContainer" id="lineContainer">
