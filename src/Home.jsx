@@ -4,10 +4,9 @@ import bgVideo from "./assets/heroSectionVideo.mp4";
 import avtar2 from "./assets/avtar2.mp4";
 import metaverse from "./assets/metaverse.mp4";
 import crypto from "./assets/‏cryptocurrency.jpg";
-import { useAnimation, motion, useInView } from "framer-motion";
+import { useAnimation, motion, useInView, delay } from "framer-motion";
 import { useNavigate } from "react-router";
 import Navbar from "./Navbar.js";
-
 const Home = () => {
   const textVideoRef = useRef(null);
   const lineAppearRef = useRef(null);
@@ -15,11 +14,11 @@ const Home = () => {
   const lineAppearMiddleRefs = useRef([]);
   const vdScrollRotateRef = useRef(null);
   const contentContainerRef = useRef(null);
-  const ref = useRef(null);
-
-  const isInView = useInView(ref, { once: false });
+  const refs = [useRef(null),useRef(null),useRef(null)];
+  const inInView0= useInView(refs[0],{once:true});
+  const inInView1= useInView(refs[1],{once:true});
+  const isInView =useInView(refs[2],{once:false}); 
   const navigate = useNavigate();
-
   useEffect(() => {
     const content = document.querySelector(".content");
     content.style.opacity = "1";
@@ -32,14 +31,32 @@ const Home = () => {
       // const lineAppearMiddle=lineAppearMiddleRefs[0].current;
       // lineAppearMiddle.style.width="100%";
       let lineAppear = document.querySelector(".lineAppear");
-      
-       lineAppear.style.width = "100%";
+             lineAppear.style.width = "100%";
        let lineAppearMiddles =document.querySelectorAll(".lineAppearMiddle");
      lineAppearMiddles[0].style.height="87%";
      lineAppearMiddles[1].style.height="87%";
       lineAppearBottom.style.width = "100%";
     }
-  }, [isInView]);
+    if(inInView1){
+      let content =document.querySelector(".contentContainer");
+      content.style.transitionDuration ="3s" ;
+      content.style.transform="translateX(0%)";
+        }
+    if(inInView0){  
+      let content2 =document.querySelector(".textVideo");
+      content2.style.transitionDuration ="3s" ;
+content2.style.transform="translateX(0%)";
+    }
+    if(!inInView0){
+      let content2 =document.querySelector(".textVideo");
+      content2.style.transform="translateX(-100%)";
+    }
+    if(!inInView1){
+      let content =document.querySelector(".contentContainer");
+content.style.transform="translateX(100%)";
+
+    }
+  },[isInView, inInView0, inInView1]);
 
   return (
     <div>
@@ -64,7 +81,7 @@ const Home = () => {
         </button>
       </div>
       <div className="color">
-        <div className="videoContainer">
+        <div className="videoContainer" ref={refs[0]}>
           <div className="textVideo" ref={textVideoRef}>
             <h2 className="trade">TRADE</h2>
             <h2 className="tradeAsset">
@@ -79,7 +96,7 @@ const Home = () => {
           </div>
           <img src={crypto} className="crypto" />
         </div>
-        <div className="scrollRotate">
+        <div className="scrollRotate" ref={refs[1]}>
           <div className="vdRotate">
             <div className="vdContainer" ref={vdScrollRotateRef}>
               <video
@@ -103,7 +120,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <motion.div ref={ref} transition={{ duration: 1 }}>
+      <motion.div ref={refs[2]} transition={{ duration: 1 }}>
         <div className="lineContainer" id="lineContainer">
           <div className="lineAppear " ref={lineAppearRef}></div>
           <div className="lineAppearBottom" ref={lineAppearBottomRef}></div>
