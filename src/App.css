@@ -27,24 +27,34 @@ body {
   z-index: 100;
 }
 
-.logo {
-  color: #fff;
-  font-size: 39px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: default;
-}
 
-nav a {
+.nav a {
   color: #fff;
-  font-size: 18px;
   text-decoration: none;
   margin-left: 35px;
   transition: 0.3s;
+  padding: 7px 10px;
+  border-radius: 5% ;
 }
 
-nav a:hover {
-  color: red;
+.logo {
+  color: #fff;
+  font-size: 39px;
+  /* text-decoration: none; */
+  /* cursor: default; */
+}
+.navbar a:hover {
+  border-bottom: 3px solid #028bf3;
+  background-color: rgb(0, 3, 68);
+  color: #fff;
+  font-size: 105%;
+}
+
+.join a:hover{
+  border-bottom: 3px solid #028bf3;
+  background-color: rgb(0, 3, 68);
+  color: #fff;
+  font-size: 105%;
 }
 
 .content {
@@ -92,6 +102,7 @@ nav a:hover {
 
 .navbar {
   margin-right: 20px;
+  font-size: 18px;
 }
 
 .crypto {
@@ -101,6 +112,7 @@ nav a:hover {
 
 .join {
   margin: 0;
+  font-size: 18px;
 }
 
 .welcome {
