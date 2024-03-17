@@ -6,7 +6,7 @@ const userMiddleware = (req, res, next) => {
   if (token) {
     jwt.verify(
       token,
-      "kishan sheth super secret key",
+      process.env.TOKEN_SECRET,
       async (err, decodedToken) => {
         if (err) {
           res.json({ status: false });
