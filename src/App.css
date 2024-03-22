@@ -1,15 +1,13 @@
-* {
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
-  /* background-image: linear-gradient(black, white); */
-  /* #21222A */
-  overflow: auto;
   background-color: black;
 }
 
@@ -17,8 +15,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 20px 100px;
+  width: 100vw;
+  padding-top: 20px;
   padding-right: 50px;
   background: transparent;
   display: flex;
@@ -33,13 +31,14 @@ body {
   text-decoration: none;
   font-weight: 600;
   cursor: default;
+  margin-left: 30px;
 }
 
 nav a {
   color: #fff;
   font-size: 18px;
   text-decoration: none;
-  margin-left: 35px;
+  margin-right: 35px;
   transition: 0.3s;
 }
 
@@ -84,6 +83,7 @@ nav a:hover {
 .bgVideo {
   height: 100vh;
   width: 100vw;
+  object-fit: cover;
 }
 
 .nav_blur {
@@ -104,12 +104,13 @@ nav a:hover {
 }
 
 .welcome {
-  font-size: 48px;
+  font-size: 55px;
   margin-bottom: 10px;
 }
 
 .text_content {
-  font-size: 25px;
+  font-size: 35px;
+  width: 650px;
 }
 .color {
   background-image: linear-gradient(black, #21222a);
@@ -123,7 +124,7 @@ nav a:hover {
 .trade {
   color: red;
   font-size: 55px;
-  margin-bottom: 30px;
+  
 }
 
 .tradeAsset {
@@ -337,7 +338,7 @@ body {
   backface-visibility: hidden;
 }
 
-.card {
+.card1 {
   background-color: white;
   color: black;
   font-family: cursive;
@@ -346,6 +347,29 @@ body {
   text-align: center;
   width: 300px;
   height: 300px;
+  z-index: 20;
+}
+.card2 {
+  background-color: white;
+  color: black;
+  font-family: cursive;
+  padding: 8px;
+  font-size: large;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  z-index: 20;
+}
+.card3 {
+  background-color: white;
+  color: black;
+  font-family: cursive;
+  padding: 8px;
+  font-size: large;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  z-index: 20;
 }
 
 .flip-card-back {

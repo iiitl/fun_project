@@ -7,18 +7,18 @@ const Navbar = () => {
     <>
       <nav ref={navRef} className="nav">
         <a href="#" className="logo">
-          CryptoArtVerse
+          Cipher Hunt
         </a>
         <div className="navbar" style={{ marginLeft: "-160px" }}>
-          <a href="#">Home</a>
-          <a href="#lineContainer">About</a>
+          <a href="/random">Home</a>
+          <a href="/lol">About</a>
           {/* <a href="#">Portfolio</a>
           <a href="#">Service</a>
           <a href="#">Contact</a> */}
         </div>
         <div className="join">
-          <a href="#">Login</a>
-          <a href="#">Sign up</a>
+          <a href="/login">Login</a>
+          <a href="/signup">Sign up</a>
         </div>
       </nav>
     </>
