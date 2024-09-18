@@ -1,6 +1,6 @@
-# Crypto React Project
+# Fun React Project
 
-Welcome to the Crypto React Project! This is a project showcasing stunning animations 
+Welcome to the Fun React Project! This is a project showcasing stunning animations 
 
 ## Getting Started
 
@@ -8,11 +8,11 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/crypto-animation-react.git
+   git clone https://github.com/iiitl/fun_project.git
 
 2. **Navigate to the project directory:**
    ```bash
-   cd crypto-animation-react
+   cd fun_project
 3. **Install dependencies:**
    ```bash
    npm install
